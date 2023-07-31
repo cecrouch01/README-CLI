@@ -9,7 +9,13 @@ const questions = [
         name:"Title"
     }
 ];
-
+function errorMessage(err) {
+    if(err == 'TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined'){
+        console.log('Write README.md to create README in current directory or <path>/README.md for a different directory')
+    } else {
+        console.log(`This is in Error: ${err}`)
+    }
+}
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, JSON.stringify(data))
@@ -22,7 +28,7 @@ function init() {
         writeToFile(process.argv[2], response)
     })
     .catch((error) => {
-        console.log(`This is in Error: ${error}`)
+        errorMessage(error)
     })
 }
 
