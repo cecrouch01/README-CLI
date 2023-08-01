@@ -1,54 +1,44 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer')
+const generateMarkdown = require('./utils/generateMarkdown')
+//This creates collects data needed for the CLI
 const questions = [
-    {
-        input: 'input',
-        message: 'What is the path of this README? (Leave blank if it should be in the current directory)',
-        name: 'path',
-        validate: function(answer) {
-            if(answer.indexOf(' ') !== -1) {
-                console.log('Do not use spaces in this response');
-            } else {
-                return true;
-            }
-        }
-    },
     {
         type:'input',
         message:'What is the title of this README?',
         name:'title',
-        default: "'<Insert Title Here>'"
+        default: '<Insert Title Here>',
     },
     {
         type: 'input',
         message: 'Write the description for this project.',
         name: 'description',
-        default: "'<Insert Description Here>'",
+        default: '<Insert Description Here>',
     },
     {
         type: 'input',
         message: 'Write the installation instructions for this project.',
         name: 'installation',
-        default: "'<Insert Installation Instructions Here>'"
+        default: '<Insert Installation Instructions Here>',
     },
     {
         type: 'input',
         message: "Write the project's instructions/examples for use.",
         name: 'usage',
-        default: "'<Insert Usage Info Here>'" 
+        default: '<Insert Usage Info Here>', 
     },
     {
         type: 'input',
         message: "Write the collaborators/third-party-assets/tutorials used the project.",
         name: 'credits',
-        default: "'<Insert Credits Here>'",
+        default: '<Insert Credits Here>',
     },
     {
         type: 'input',
         message: "Write the test instructions of the project.",
         name: 'tests',
-        default: "'<Insert Test Instructions Here>'"
+        default: '<Insert Test Instructions Here>'
     },
     {
         type: 'list',
@@ -89,20 +79,21 @@ function errorMessage(err) {
         console.log(`This is in Error: ${err}`)
     }
 }
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, JSON.stringify(data))
+//This creates the README.md file. 
+function writeToFile(data) {
+       fs.writeFileSync('README.md', data)
+}
+//This is the function to use the user's inputed information
+function renderREADMEInfo(userData) {
+    return generateMarkdown(userData);
 }
 
-// TODO: Create a function to initialize app
+//This function runs the application
 function init() {
     inquirer.prompt(questions)
-    .then((response) => {
-        writeToFile(`${response.path}README.md`, response)
-    })
-    .catch((error) => {
-        errorMessage(error)
-    })
+    .then(renderREADMEInfo)
+    .then(writeToFile)
+    .catch(errorMessage)
 }
 
 // Function call to initialize app
