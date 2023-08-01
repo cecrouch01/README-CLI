@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
+const { makeBadge, ValidationError } = require('badge-maker')
 //This creates collects data needed for the CLI
 const questions = [
     {
@@ -43,7 +44,7 @@ const questions = [
     {
         type: 'list',
         messages: 'Select a license for your project',
-        choices: ['MIT License', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense', 'Beerware License'],
+        choices: ['No License', 'MIT License', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense', 'Beerware License'],
         name: 'license',
     },
     {
