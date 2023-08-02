@@ -1,4 +1,9 @@
 const { makeBadge, ValidationError } = require('badge-maker')
+const octokit = require('octokit')
+let octokitRequest = new Octokit({
+  auth: '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'
+})
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -19,7 +24,19 @@ function renderLicenseBadge(license) {
 //Just put these in the license section
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+async function renderLicenseLink(license) {
+  if(license === 'Beerware License'){
+    return "https://www.tldrlegal.com/license/beerware-license"
+  } else {
+
+    let licensURL = await octokitRequest.request(`GET /licenses/${license}`, {
+      license: 'LICENSE',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+    console.log(licensURL)
+  }
   
 }
 
@@ -57,8 +74,8 @@ function generateMarkdown(data) {
   ${data.test}
 
   ## License
-  ${data.license}
-
+  ${renderLicenseLink(data.license)}
+  
   ---
   ## Questions?
   If you have any questions feel free to contact me at ${data.username} or ${data.email}
