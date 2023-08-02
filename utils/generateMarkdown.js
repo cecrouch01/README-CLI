@@ -1,6 +1,5 @@
 const { makeBadge, ValidationError } = require('badge-maker')
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//This is the array of license URL's
 const licenseURL = [
   {
     title: 'No License', 
@@ -64,6 +63,7 @@ const licenseURL = [
   },
 
 ]
+//This creates the badge for the README
 function renderLicenseBadge(license) {
   const format = {
     label: 'License',
@@ -78,10 +78,7 @@ function renderLicenseBadge(license) {
   }
 
 }
-
-//Just put these in the license section
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+//This renders the link for the license
 function renderLicenseLink(license) {
   for(let i =0; i < licenseURL.length; i++){
     if(license === licenseURL[i].title){
@@ -89,9 +86,7 @@ function renderLicenseLink(license) {
     }
   }
 }
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//This renders the license section
 function renderLicenseSection(license) {
   if(license === 'No License'){
     return ''
@@ -99,8 +94,7 @@ function renderLicenseSection(license) {
     return `${license}. For more information go to ${renderLicenseLink(license)}`
   }
 }
-
-// TODO: Create a function to generate markdown for README
+//This creates the Markdown for the README
 function generateMarkdown(data) {
   const markDown = 
   `${renderLicenseBadge(data.license)}
@@ -132,7 +126,8 @@ function generateMarkdown(data) {
  
   ---
   ## Questions?
-  If you have any questions feel free to contact me at ${data.username} or ${data.email}
+  If you would like to see some of my other work go to https://github.com/${data.username}.
+  If you have any additional questions feel free to contact me at: ${data.email}
   `
   
  

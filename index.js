@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
-const { makeBadge, ValidationError } = require('badge-maker')
 //This creates collects data needed for the CLI
 const questions = [
     {
@@ -74,11 +72,7 @@ const questions = [
 ];
 //This creates the error message if there is something wrong in the questionaire.
 function errorMessage(err) {
-    if(err == 'TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined'){
-        console.log('Write README.md to create README in current directory or <path>/README.md for a different directory')
-    } else {
-        console.log(`This is in Error: ${err}`)
-    }
+    console.log(err)
 }
 //This creates the README.md file. 
 function writeToFile(data) {
