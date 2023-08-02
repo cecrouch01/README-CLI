@@ -1,7 +1,7 @@
 const { makeBadge, ValidationError } = require('badge-maker')
-import { Octokit } from "octokit"
+const { Octokit } = require ("octokit")
 let octokit = new Octokit({
-  auth: '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'
+  auth: process.env.GITHUB_TOKEN
 })
 
 // TODO: Create a function that returns a license badge based on which license is passed in
@@ -28,7 +28,7 @@ async function renderLicenseLink(license) {
   if(license === 'Beerware License'){
     return "https://www.tldrlegal.com/license/beerware-license"
   } else {
-
+    console.log(process.env.GITHUB_TOKEN)
     let licensURL = await octokit.request(`GET /licenses/${license}`, {
       license: 'LICENSE',
       headers: {
