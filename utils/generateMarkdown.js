@@ -119,7 +119,7 @@ function generateMarkdown(data) {
   ${data.credits}
       
   ## Tests
-  ${data.test}
+  ${data.tests}
 
   ## License
   ${renderLicenseSection(data.license)}
