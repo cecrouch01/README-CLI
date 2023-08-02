@@ -1,6 +1,6 @@
 const { makeBadge, ValidationError } = require('badge-maker')
-const octokit = require('octokit')
-let octokitRequest = new Octokit({
+import { Octokit } from "octokit"
+let octokit = new Octokit({
   auth: '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'
 })
 
@@ -29,7 +29,7 @@ async function renderLicenseLink(license) {
     return "https://www.tldrlegal.com/license/beerware-license"
   } else {
 
-    let licensURL = await octokitRequest.request(`GET /licenses/${license}`, {
+    let licensURL = await octokit.request(`GET /licenses/${license}`, {
       license: 'LICENSE',
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
