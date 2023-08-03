@@ -4,9 +4,13 @@ const { Octokit } = require ("octokit")
 let octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN
 })
-
+//This creates the LICENSE.md with content.
 function createLICENSE(licenseContent){
   fs.writeFileSync('LICENSE.md', licenseContent);
+}
+//This creates the badge.svg file to use for README
+function createSVGFile(data){
+  fs.writeFileSync('./assets/badge.svg', data)
 }
 //This creates the badge for the README
 function renderLicenseBadge(license) {
@@ -18,8 +22,9 @@ function renderLicenseBadge(license) {
   if(license === 'No License') {
     return ''
   } else {
-    const badge = makeBadge(format)
-    return badge
+    const badge = makeBadge(format);
+    createSVGFile(badge);
+    return '![Badge](./assets/badge.svg)'
   }
 
 }
@@ -50,7 +55,7 @@ function renderLicenseSection(license) {
 }
 //This creates the Markdown for the README
 function generateMarkdown(data) {
-  const markDown = 
+    const markDown = 
   `${renderLicenseBadge(data.license)}
   # ${data.title}
 
