@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "badge-maker": "^3.3.1",
-    "inquirer": "^8.2.4"
+    "dotenv": "^16.3.1",
+    "inquirer": "^8.2.4",
+    "octokit": "^3.1.0"
   }
 }
