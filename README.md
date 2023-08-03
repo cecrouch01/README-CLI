@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="82" height="20" role="img" aria-label="License: MIT"><title>License: MIT</title><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="82" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="51" height="20" fill="#555"/><rect x="51" width="31" height="20" fill="#4c1"/><rect width="82" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><text aria-hidden="true" x="265" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="410">License</text><text x="265" y="140" transform="scale(.1)" fill="#fff" textLength="410">License</text><text aria-hidden="true" x="655" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="210">MIT</text><text x="655" y="140" transform="scale(.1)" fill="#fff" textLength="210">MIT</text></g></svg>
-  # <Insert Title Here>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="158" height="20" role="img" aria-label="License: Beerware License"><title>License: Beerware License</title><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="158" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="51" height="20" fill="#555"/><rect x="51" width="107" height="20" fill="#4c1"/><rect width="158" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><text aria-hidden="true" x="265" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="410">License</text><text x="265" y="140" transform="scale(.1)" fill="#fff" textLength="410">License</text><text aria-hidden="true" x="1035" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="970">Beerware License</text><text x="1035" y="140" transform="scale(.1)" fill="#fff" textLength="970">Beerware License</text></g></svg>
+  # README CLI
 
   ## Description
-  <Insert Description Here>
+  This is a CLI which will take user input and create a README.md file using the user input. For example this README was created using the CLI!
+
 
   ## Table of Contents
   - [Installation](#installation)
@@ -11,21 +13,24 @@
   - [License](#license)
 
   ## Installation
-  <Insert Installation Instructions Here>
+
+  To install this CLI you must download all of the folders and upload it into the project you want. 
 
   ## Usage
-  <Insert Usage Info Here>
+  This can be used for any README used in any coding project. As stated before this read me was created using the CLI! If you want to see a video of this CLI being using click on this link: https://drive.google.com/file/d/1v01IIW6RAecDb3H-Lfc0-0VcyyhrF3Wd/view
 
   ## Contributing Credits
-  <Insert Credits Here>
+  For this application I used inquirer and badge-maker. These allowed for me to create prompts for the user to interact with and create a badge for the license being used. 
       
   ## Tests
-  undefined
+  <Insert Test Instructions Here>
 
   ## License
-  [object Promise]
-  
+  Beerware License. For more information go to https://www.tldrlegal.com/license/beerware-license
+ 
   ---
   ## Questions?
-  If you have any questions feel free to contact me at lkajdsf or ;lkjfasd
+  If you would like to see some of my other work go to https://github.com/cecrouch01.
+  If you have any additional questions feel free to contact me at: cecrouch01@gmail.com
+
   
